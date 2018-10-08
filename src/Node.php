@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__."/HtmlConfig.php";
+namespace HTML;
 
 /**
  * An HTML node; text or element.
