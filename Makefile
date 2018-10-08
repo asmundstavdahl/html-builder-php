@@ -6,6 +6,7 @@ test:
 	php tests/pretty-formatting-test.php
 	php tests/element-node-test.php
 	php tests/html-root-element-test.php
+	php tests/add-child-test.php
 
 setup-dev:
 	composer install
