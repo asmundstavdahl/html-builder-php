@@ -18,7 +18,7 @@ class Element implements Node
 		$this->childNodes = $childNodes;
 	}
 
-	public function toHTML(HtmlConfig $config) : string
+	public function toHTML(HtmlConfig $config)
 	{
 		$attributeString = $this->attributeString($config);
 		$openingTag = "<{$this->tagName}{$attributeString}>";
@@ -40,7 +40,7 @@ class Element implements Node
 		return $outerHTML;
 	}
 
-	protected function attributeString(HtmlConfig $config) : string
+	protected function attributeString(HtmlConfig $config)
 	{
 		$attributeStrings = [];
 		foreach ($this->attributes as $key => $value) {
@@ -49,7 +49,7 @@ class Element implements Node
 		return join("", $attributeStrings);
 	}
 
-	protected function innerHTML(HtmlConfig $config) : string
+	protected function innerHTML(HtmlConfig $config)
 	{
 		$childHTMLStrings = array_map(
 			function($child) use ($config){

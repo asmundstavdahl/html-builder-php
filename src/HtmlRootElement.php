@@ -12,7 +12,7 @@ class HtmlRootElement extends Element
 		parent::__construct("html", $attributes, $childNodes);
 	}
 
-	public function toHTML(HtmlConfig $config) : string
+	public function toHTML(HtmlConfig $config)
 	{
 		return "<!DOCTYPE html>\n" . parent::toHTML($config);
 	}

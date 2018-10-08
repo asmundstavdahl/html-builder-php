@@ -21,17 +21,17 @@ class HtmlConfig
 		$this->indentationLevel = $initialIndentationLevel;
 	}
 
-	function indent(int $deltaIntentationLevel) : HtmlConfig
+	function indent(int $deltaIntentationLevel)
 	{
 		$this->indentationLevel += $deltaIntentationLevel;
 		return $this;
 	}
 
-	function indentation(int $relativeIndentationLevel = 0) : string
+	function indentation(int $relativeIndentationLevel = 0)
 	{
 	}
 
-	function glue(int $relativeIndentationLevel = 0) : string
+	function glue(int $relativeIndentationLevel = 0)
 	{
 		if ($this->pretty)
 		{

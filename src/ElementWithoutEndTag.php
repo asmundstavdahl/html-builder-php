@@ -11,7 +11,7 @@ class ElementWithoutEndTag extends Element
 		$this->children = [];
 	}
 
-	public function toHTML(HtmlConfig $config) : string
+	public function toHTML(HtmlConfig $config)
 	{
 		$attributeString = $this->attributeString($config);
 		$openingTag = "<{$this->tagName}{$attributeString}>";
@@ -20,7 +20,7 @@ class ElementWithoutEndTag extends Element
 		return $outerHTML;
 	}
 
-	protected function innerHTML(HtmlConfig $config) : string
+	protected function innerHTML(HtmlConfig $config)
 	{
 		return "";
 	}
