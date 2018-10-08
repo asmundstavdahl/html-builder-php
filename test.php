@@ -5,10 +5,14 @@ require_once __DIR__."/HtmlConfig.php";
 
 $nodeTree = HTML(["lang" => "en"],
 	[ HEAD([],
-		[ SCRIPT(["type" => "text/javascript"], [""])
+		[ TITLE([], ["Test of html-builder"])
+		, SCRIPT(["type" => "text/javascript"], ["
+			function jsTest() {
+				return 'Hello from script tag.'
+			}"])
 		, STYLE([], ["h1 { color: lightblue; }"])
 		])
-	, BODY(["onload" => "alert('body.onload with a <test> \\'of \"escapement\"')"],
+	, BODY(["onload" => "alert('body.onload with a <test> \\'of \"escapement\". ' + jsTest())"],
 		[ H1([], ["This is a test"])
 		, P([],
 			[ TEXT("Irure velit in velit proident qui ullamco aliquip ex sint irure sint excepteur nulla amet veniam do.")
@@ -22,6 +26,6 @@ $nodeTree = HTML(["lang" => "en"],
 		])
 	]);
 
-$htmlConfig = new HtmlConfig();
+$htmlConfig = new HtmlConfig(true, "\t");
 
 echo $nodeTree->toHTML($htmlConfig);
