@@ -2,11 +2,10 @@
 
 # Usage
 
-Rough instructions:
-
 ```sh
 composer require asmundstavdahl/html
 ```
+
 ```php
 <?php
 
