@@ -62,4 +62,8 @@ class Element implements Node
 
 		return join($config->glue(), $childHTMLStrings);
 	}
+
+	public function addChild(Node $node) {
+		$this->childNodes []= $node;
+	}
 }
