@@ -1,5 +1,7 @@
 <?php
 
+namespace HTML;
+
 require_once __DIR__."/Element.php";
 require_once __DIR__."/HtmlConfig.php";
 

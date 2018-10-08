@@ -1,7 +1,6 @@
 <?php
 
-require_once __DIR__."/Element.php";
-require_once __DIR__."/HtmlConfig.php";
+namespace HTML;
 
 class ElementWithoutEndTag extends Element
 {

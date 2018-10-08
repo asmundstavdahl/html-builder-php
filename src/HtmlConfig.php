@@ -1,5 +1,7 @@
 <?php
 
+namespace HTML;
+
 /**
  * Configuration for when making HTML.
  */
