@@ -5,7 +5,7 @@
 Rough instructions:
 
 ```sh
-composer require --dev asmundstavdahl/html:*
+composer require asmundstavdahl/html
 ```
 ```php
 <?php
