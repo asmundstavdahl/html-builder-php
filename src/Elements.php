@@ -2,12 +2,12 @@
 
 /**
  * Used to help include the element functions.
- * 
- * Try `use HTML\Elements;`.
+ *
+ * Try `new HTML\Elements;`.
  */
 
 namespace HTML;
 
 require_once __DIR__."/elements.php";
 
-abstract class Elements {}
+class Elements {}

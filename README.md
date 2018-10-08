@@ -10,7 +10,10 @@ composer require --dev asmundstavdahl/html:*
 ```php
 <?php
 
-use HTML\Elements;
+require_once 'vendor/autoload.php';
+
+# Include element function definitions
+new HTML\Elements;
 
 $nodeTree = HTML(["lang" => "en"],
   [ HEAD([],
