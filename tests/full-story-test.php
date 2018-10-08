@@ -1,8 +1,8 @@
 <?php
 
-# Emulate composer autoload environment
-require_once __DIR__."/../src/Elements.php";
-use HTML\Elements;
+require_once __DIR__."/../vendor/autoload.php";
+
+new HTML\Elements;
 
 $nodeTree = HTML(["lang" => "en"],
 	[ HEAD([],

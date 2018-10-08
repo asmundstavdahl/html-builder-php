@@ -1,4 +1,11 @@
-.PHONY: test
+.PHONY: test setup-dev
 
 test:
-	php tests/*.php
+	php tests/full-story-test.php
+	php tests/text-node-test.php
+	php tests/pretty-formatting-test.php
+	php tests/element-node-test.php
+	php tests/html-root-element-test.php
+
+setup-dev:
+	composer install
