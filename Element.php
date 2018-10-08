@@ -5,9 +5,9 @@ require_once __DIR__."/HtmlConfig.php";
 
 class Element implements Node
 {
-	private $tagName;
-	private $attributes;
-	private $childNodes;
+	protected $tagName;
+	protected $attributes;
+	protected $childNodes;
 
 	function __construct(string $tagName, array $attributes, array $childNodes)
 	{
@@ -38,7 +38,7 @@ class Element implements Node
 		return $outerHTML;
 	}
 
-	private function attributeString(HtmlConfig $config) : string
+	protected function attributeString(HtmlConfig $config) : string
 	{
 		$attributeStrings = [];
 		foreach ($this->attributes as $key => $value) {
@@ -47,7 +47,7 @@ class Element implements Node
 		return join("", $attributeStrings);
 	}
 
-	private function innerHTML(HtmlConfig $config) : string
+	protected function innerHTML(HtmlConfig $config) : string
 	{
 		$childHTMLStrings = array_map(
 			function($child) use ($config){
