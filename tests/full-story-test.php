@@ -58,7 +58,7 @@ $expectedHtml = <<<EOF
 		<label for="test_input">
 			Test input
 		</label>
-		<input id="test_input">
+		<input id="test_input" type="text">
 		<div></div>
 	</body>
 </html>
