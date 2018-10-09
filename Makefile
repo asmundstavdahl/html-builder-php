@@ -7,6 +7,7 @@ test:
 	php tests/element-node-test.php
 	php tests/html-root-element-test.php
 	php tests/add-child-test.php
+	php tests/element-attributes-test.php
 
 setup-dev:
 	composer install
