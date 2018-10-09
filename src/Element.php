@@ -44,7 +44,7 @@ class Element implements Node
 	{
 		$attributeStrings = [];
 		foreach ($this->attributes as $key => $value) {
-			return sprintf(' %s="%s"', $key, htmlspecialchars($value));
+			$attributeStrings []= sprintf(' %s="%s"', $key, htmlspecialchars($value));
 		}
 		return join("", $attributeStrings);
 	}
