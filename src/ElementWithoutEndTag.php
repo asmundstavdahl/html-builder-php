@@ -4,14 +4,14 @@ namespace HTML;
 
 class ElementWithoutEndTag extends Element
 {
-	function __construct(string $tagName, array $attributes)
+	function __construct($tagName, $attributes)
 	{
 		$this->tagName = $tagName;
 		$this->attributes = $attributes;
 		$this->children = [];
 	}
 
-	public function toHTML(HtmlConfig $config)
+	public function toHTML($config)
 	{
 		$attributeString = $this->attributeString($config);
 		$openingTag = "<{$this->tagName}{$attributeString}>";
@@ -20,7 +20,7 @@ class ElementWithoutEndTag extends Element
 		return $outerHTML;
 	}
 
-	protected function innerHTML(HtmlConfig $config)
+	protected function innerHTML($config)
 	{
 		return "";
 	}

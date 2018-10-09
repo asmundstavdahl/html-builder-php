@@ -11,14 +11,14 @@ class Element implements Node
 	protected $attributes;
 	protected $childNodes;
 
-	function __construct(string $tagName, array $attributes, array $childNodes)
+	function __construct($tagName, $attributes, $childNodes)
 	{
 		$this->tagName = $tagName;
 		$this->attributes = $attributes;
 		$this->childNodes = $childNodes;
 	}
 
-	public function toHTML(HtmlConfig $config)
+	public function toHTML($config)
 	{
 		$attributeString = $this->attributeString($config);
 		$openingTag = "<{$this->tagName}{$attributeString}>";
@@ -40,7 +40,7 @@ class Element implements Node
 		return $outerHTML;
 	}
 
-	protected function attributeString(HtmlConfig $config)
+	protected function attributeString($config)
 	{
 		$attributeStrings = [];
 		foreach ($this->attributes as $key => $value) {
@@ -49,7 +49,7 @@ class Element implements Node
 		return join("", $attributeStrings);
 	}
 
-	protected function innerHTML(HtmlConfig $config)
+	protected function innerHTML($config)
 	{
 		$childHTMLStrings = array_map(
 			function($child) use ($config){
@@ -63,7 +63,7 @@ class Element implements Node
 		return join($config->glue(), $childHTMLStrings);
 	}
 
-	public function addChild(Node $node) {
+	public function addChild($node) {
 		$this->childNodes []= $node;
 	}
 }

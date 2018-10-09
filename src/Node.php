@@ -7,5 +7,5 @@ namespace HTML;
  */
 interface Node
 {
-	public function toHTML(HtmlConfig $config);
+	public function toHTML($config);
 }

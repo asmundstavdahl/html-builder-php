@@ -6,12 +6,12 @@ class TextNode implements Node
 {
 	private $text;
 
-	function __construct(string $text)
+	function __construct($text)
 	{
 		$this->text = $text;
 	}
 
-	public function toHTML(HtmlConfig $config)
+	public function toHTML($config)
 	{
 		return htmlspecialchars($this->text);
 	}
