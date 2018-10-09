@@ -12,9 +12,9 @@ class HtmlConfig
 	public $indentationLevel = 0;
 
 	function __construct(
-		bool $pretty = true,
-		string $indentationString = "  ",
-		int $initialIndentationLevel = 0)
+		$pretty = true,
+		$indentationString = "  ",
+		$initialIndentationLevel = 0)
 	{
 		$this->pretty = $pretty;
 		$this->indentationString = $indentationString;
