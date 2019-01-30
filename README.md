@@ -62,12 +62,9 @@ The resulting `$html` would be this string:
     <p>
       Strings become text nodes.
       <br>
-      You can also be more explicit and make a text node using the TEXT function.
+      You can also be more explicit and make a text node using the TEXT function&period;
     </p>
-    <label for="test_input">
-      Test input
-    </label>
-    <input id="test_input">
+    <label for="test_input">Test input</label><input id="test_input" type="text">
   </body>
 </html>
 ```
