@@ -13,6 +13,6 @@ class TextNode implements Node
 
 	public function toHTML(HtmlConfig $config) : string
 	{
-		return htmlspecialchars($this->text);
+		return htmlentities($this->text, ENT_QUOTES | ENT_HTML5);
 	}
 }

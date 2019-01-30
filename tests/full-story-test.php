@@ -19,7 +19,26 @@ $nodeTree = HTML(["lang" => "en"],
 			[ TEXT("Irure velit in velit proident qui ullamco aliquip ex sint irure sint excepteur nulla amet veniam do.")
 			, BR()
 			, BR()
-			, TEXT("Esse elit ad culpa non enim amet nisi magna quis ad pariatur et id sed elit minim sed.")
+			, "Esse elit ad culpa non enim amet nisi magna quis ad pariatur et id sed elit minim sed."
+			])
+		, H1([],
+			[ CODE([],
+				[ "kode"
+				, B([], ["klubben"])
+				])
+			])
+		, TABLE([],
+			[ TR([],
+				[ TH([],
+					[ TEXT("Author's name")
+					])
+				])
+			, TR([],
+				[ TD([],
+					[ TEXT("Åsmund,")
+					, "Åsmund,"
+					])
+				])
 			])
 		, LABEL(["for" => "test_input"], ["Test input"])
 		, INPUT(["id" => "test_input", "type" => "text"], [])
@@ -50,15 +69,27 @@ $expectedHtml = <<<EOF
 			This is a test
 		</h1>
 		<p>
-			Irure velit in velit proident qui ullamco aliquip ex sint irure sint excepteur nulla amet veniam do.
+			Irure velit in velit proident qui ullamco aliquip ex sint irure sint excepteur nulla amet veniam do&period;
 			<br>
 			<br>
 			Esse elit ad culpa non enim amet nisi magna quis ad pariatur et id sed elit minim sed.
 		</p>
-		<label for="test_input">
-			Test input
-		</label>
-		<input id="test_input" type="text">
+		<h1>
+			<code>kode<b>klubben</b></code>
+		</h1>
+		<table>
+			<tr>
+				<th>
+					Author&apos;s name
+				</th>
+			</tr>
+			<tr>
+				<td>
+					&Aring;smund&comma;Åsmund,
+				</td>
+			</tr>
+		</table>
+		<label for="test_input">Test input</label><input id="test_input" type="text">
 		<div></div>
 	</body>
 </html>

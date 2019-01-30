@@ -21,12 +21,13 @@ assert($html == "<div></div>");
 $el = new HTML\Element(
 	"a",
 	["href" => "http://example.com"],
-	[ new HTML\TextNode("example link") ]);
+	[ new HTML\TextNode("example")
+    , new HTML\Element("b", [], ["link"]) ]);
 
 $html = $el->toHTML($uglyConfig);
-assert($html == "<a href=\"http://example.com\">example link</a>");
+assert($html == "<a href=\"http://example.com\">example<b>link</b></a>");
 $html = $el->toHTML($prettyConfig);
-assert($html == "<a href=\"http://example.com\">\n{$indent}example link\n</a>");
+assert($html == "<a href=\"http://example.com\">example<b>link</b></a>");
 
 #
 

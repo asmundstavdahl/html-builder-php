@@ -8,7 +8,7 @@ $prettyConfig = new HTML\HtmlConfig(true, "  ");
 $textNode = new HTML\TextNode("Escape <html> & entities please.");
 
 $html = $textNode->toHTML($uglyConfig);
-assert($html == "Escape &lt;html&gt; &amp; entities please.");
+assert($html == "Escape &lt;html&gt; &amp; entities please&period;");
 
 $html = $textNode->toHTML($prettyConfig);
-assert($html == "Escape &lt;html&gt; &amp; entities please.");
+assert($html == "Escape &lt;html&gt; &amp; entities please&period;");

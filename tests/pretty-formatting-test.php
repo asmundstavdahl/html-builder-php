@@ -18,12 +18,14 @@ $el = new HTML\Element("div", [],
 	]);
 
 $html = $el->toHTML($uglyConfig);
-assert($html == "<div>foo<span>barbaz</span></div>");
+$ok = assert($html == "<div>foo<span>barbaz</span></div>");
+if (!$ok) {
+    echo "html:\n{$html}\n:html\n";
+}
 $html = $el->toHTML($prettyConfig);
-assert($html == "<div>
-{$indent}foo
-{$indent}<span>
-{$indent}{$indent}bar
-{$indent}{$indent}baz
-{$indent}</span>
+$ok = assert($html == "<div>
+{$indent}foo<span>barbaz</span>
 </div>");
+if (!$ok) {
+    echo "html:\n{$html}\n:html\n";
+}
