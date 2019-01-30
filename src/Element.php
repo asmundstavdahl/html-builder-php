@@ -73,6 +73,12 @@ class Element implements Node
 
 			if (empty($html)) {
 				$html .= "" . $childHtml;
+			} else if ($this->tagName === "script") {
+				if (empty($config->glue())) {
+					$html .= " " . $childHtml;
+				} else {
+					$html .= $config->glue() . $childHtml;
+				}
 			} else if ($this->tagName === "pre") {
 				$html .= "" . $childHtml;
 			} else if ($childIsInline && $parentIsInline) {
