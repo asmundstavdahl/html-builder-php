@@ -2,7 +2,7 @@
     "name": "asmundstavdahl/html",
     "description": "HTML made programatically",
     "type": "library",
-    "version": "1.1.2",
+    "version": "1.2.0",
     "license": "MIT",
     "authors": [
         {
