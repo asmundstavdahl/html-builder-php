@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__."/../vendor/autoload.php";
+require_once __DIR__ . "/../vendor/autoload.php";
 
 $uglyConfig = new HTML\HtmlConfig(false);
 $prettyConfig = new HTML\HtmlConfig(true, "  ");

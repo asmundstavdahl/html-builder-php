@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__."/../vendor/autoload.php";
+require_once __DIR__ . "/../vendor/autoload.php";
 
 $indent = "  ";
 
@@ -9,9 +9,12 @@ $prettyConfig = new HTML\HtmlConfig(true, $indent);
 
 #
 
-$el = new HTML\HtmlRootElement([],
-	[ new HTML\TextNode("foo")
-	]);
+$el = new HTML\HtmlRootElement(
+	[],
+	[
+		new HTML\TextNode("foo")
+	]
+);
 
 $html = $el->toHTML($uglyConfig);
 assert($html == "<!DOCTYPE html>\n<html>foo</html>");

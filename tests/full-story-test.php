@@ -1,50 +1,69 @@
 <?php
 
-require_once __DIR__."/../vendor/autoload.php";
+require_once __DIR__ . "/../vendor/autoload.php";
 
 new HTML\Elements;
 
-$nodeTree = HTML(["lang" => "en"],
-	[ HEAD([],
-		[ TITLE([], ["Test of html-builder"])
-		, SCRIPT(["type" => "text/javascript"], [
-			"function jsTest() {
+$nodeTree = HTML(
+	["lang" => "en"],
+	[
+		HEAD(
+			[],
+			[
+				TITLE([], ["Test of html-builder"]), SCRIPT(["type" => "text/javascript"], [
+					"function jsTest() {
 				return 'Hello from script tag.'
-			}"])
-		, STYLE([], ["h1 { color: lightblue; }"])
-		])
-	, BODY(["onload" => "alert('body.onload with a <test> \\'of \"escapement\". ' + jsTest())"],
-		[ H1([], ["This is a test"])
-		, P([],
-			[ TEXT("Irure velit in velit proident qui ullamco aliquip ex sint irure sint excepteur nulla amet veniam do.")
-			, BR()
-			, BR()
-			, "Esse elit ad culpa non enim amet nisi magna quis ad pariatur et id sed elit minim sed."
-			])
-		, H1([],
-			[ CODE([],
-				[ "kode"
-				, B([], ["klubben"])
-				])
-			])
-		, TABLE([],
-			[ TR([],
-				[ TH([],
-					[ TEXT("Author's name")
-					])
-				])
-			, TR([],
-				[ TD([],
-					[ TEXT("Åsmund,")
-					, "Åsmund,"
-					])
-				])
-			])
-		, LABEL(["for" => "test_input"], ["Test input"])
-		, INPUT(["id" => "test_input", "type" => "text"], [])
-		, DIV([], [])
-		])
-	]);
+			}"
+				]), STYLE([], ["h1 { color: lightblue; }"])
+			]
+		), BODY(
+			["onload" => "alert('body.onload with a <test> \\'of \"escapement\". ' + jsTest())"],
+			[
+				H1([], ["This is a test"]), P(
+					[],
+					[
+						TEXT("Irure velit in velit proident qui ullamco aliquip ex sint irure sint excepteur nulla amet veniam do."), BR(), BR(), "Esse elit ad culpa non enim amet nisi magna quis ad pariatur et id sed elit minim sed."
+					]
+				), H1(
+					[],
+					[
+						CODE(
+							[],
+							[
+								"kode", B([], ["klubben"])
+							]
+						)
+					]
+				), TABLE(
+					[],
+					[
+						TR(
+							[],
+							[
+								TH(
+									[],
+									[
+										TEXT("Author's name")
+									]
+								)
+							]
+						), TR(
+							[],
+							[
+								TD(
+									[],
+									[
+										TEXT("Åsmund,"), "Åsmund,"
+									]
+								)
+							]
+						)
+					]
+				), LABEL(["for" => "test_input"], ["Test input"]), INPUT(["id" => "test_input", "type" => "text"], []), DIV([], [])
+			]
+		)
+	]
+);
 
 $htmlConfig = new HTML\HtmlConfig(true, "\t");
 $html = $nodeTree->toHTML($htmlConfig);
@@ -97,7 +116,7 @@ EOF;
 
 $ok = assert($html == $expectedHtml);
 
-if(!$ok){
+if (!$ok) {
 	$htmlLines = explode("\n", $html);
 	$expectedLines = explode("\n", $expectedHtml);
 

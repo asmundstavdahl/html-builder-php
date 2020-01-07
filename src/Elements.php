@@ -8,6 +8,8 @@
 
 namespace HTML;
 
-require_once __DIR__."/elements.php";
+require_once __DIR__ . "/elements.php";
 
-class Elements {}
+class Elements
+{
+}

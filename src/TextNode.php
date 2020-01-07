@@ -11,7 +11,7 @@ class TextNode implements Node
 		$this->text = $text;
 	}
 
-	public function toHTML(HtmlConfig $config) : string
+	public function toHTML(HtmlConfig $config): string
 	{
 		return htmlentities($this->text, ENT_QUOTES | ENT_HTML5);
 	}

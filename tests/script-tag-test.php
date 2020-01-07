@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__."/../vendor/autoload.php";
+require_once __DIR__ . "/../vendor/autoload.php";
 
 $indent = "  ";
 
@@ -9,10 +9,13 @@ $prettyConfig = new HTML\HtmlConfig(true, $indent);
 
 #
 
-$el = new HTML\Element("script", [],
-	[ "let v = '" . 3.1415926 . " <- ~pi'"
-    , "alert(v)"
-	]);
+$el = new HTML\Element(
+    "script",
+    [],
+    [
+        "let v = '" . 3.1415926 . " <- ~pi'", "alert(v)"
+    ]
+);
 
 $html = $el->toHTML($uglyConfig);
 

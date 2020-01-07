@@ -2,8 +2,8 @@
 
 namespace HTML;
 
-require_once __DIR__."/Element.php";
-require_once __DIR__."/HtmlConfig.php";
+require_once __DIR__ . "/Element.php";
+require_once __DIR__ . "/HtmlConfig.php";
 
 class HtmlRootElement extends Element
 {
@@ -12,7 +12,7 @@ class HtmlRootElement extends Element
 		parent::__construct("html", $attributes, $childNodes);
 	}
 
-	public function toHTML(HtmlConfig $config) : string
+	public function toHTML(HtmlConfig $config): string
 	{
 		return "<!DOCTYPE html>\n" . parent::toHTML($config);
 	}

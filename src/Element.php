@@ -2,8 +2,8 @@
 
 namespace HTML;
 
-require_once __DIR__."/Node.php";
-require_once __DIR__."/HtmlConfig.php";
+require_once __DIR__ . "/Node.php";
+require_once __DIR__ . "/HtmlConfig.php";
 
 class Element implements Node
 {
@@ -18,7 +18,7 @@ class Element implements Node
 		$this->childNodes = $childNodes;
 	}
 
-	public function toHTML(HtmlConfig $config) : string
+	public function toHTML(HtmlConfig $config): string
 	{
 		$attributeString = $this->attributeString($config);
 		$openingTag = "<{$this->tagName}{$attributeString}>";
@@ -37,30 +37,30 @@ class Element implements Node
 
 		$outerHTML =
 			$openingTag
-			. ($innerHTML ?$glueBeforeInnerHTML :"")
+			. ($innerHTML ? $glueBeforeInnerHTML : "")
 			. $innerHTML
-			. ($innerHTML ?$glueAfterInnerHTML :"")
+			. ($innerHTML ? $glueAfterInnerHTML : "")
 			. $closingTag;
 		return $outerHTML;
 	}
 
-	protected function attributeString(HtmlConfig $config) : string
+	protected function attributeString(HtmlConfig $config): string
 	{
 		$attributeStrings = [];
 		foreach ($this->attributes as $key => $value) {
-			$attributeStrings []= sprintf(' %s="%s"', $key, htmlspecialchars($value));
+			$attributeStrings[] = sprintf(' %s="%s"', $key, htmlspecialchars($value));
 		}
 		return join("", $attributeStrings);
 	}
 
-	protected function innerHTML(HtmlConfig $config) : string
+	protected function innerHTML(HtmlConfig $config): string
 	{
 		$parentIsInline = self::isInline($this);
 		$prevSiblingIsInline = false;
 
 		$html = "";
 
-		for ($i=0; $i < count($this->childNodes); $i++) {
+		for ($i = 0; $i < count($this->childNodes); $i++) {
 			$child = $this->childNodes[$i];
 
 			$childIsInline = self::isInline($child);
@@ -95,66 +95,25 @@ class Element implements Node
 		return $html;
 	}
 
-	public function addChild(Node $node) {
-		$this->childNodes []= $node;
+	public function addChild(Node $node)
+	{
+		$this->childNodes[] = $node;
 	}
 
-	private static function isInline($node) : bool
+	private static function isInline($node): bool
 	{
 		if (is_string($node) || is_a($node, TextNode::class)) {
 			return true;
 		}
 
-		return false !== array_search($node->tagName,
-			[ "a"
-			, "abbr"
-			, "acronym"
-			, "audio"
-			, "b"
-			, "bdi"
-			, "bdo"
-			, "big"
-			#, "br"
-			, "button"
-			, "canvas"
-			, "cite"
-			, "code"
-			, "data"
-			, "datalist"
-			, "del"
-			, "dfn"
-			, "em"
-			, "embed"
-			, "i"
-			, "iframe"
-			, "img"
-			, "input"
-			, "ins"
-			, "kbd"
-			, "label"
-			, "map"
-			, "mark"
-			, "meter"
-			, "noscript"
-			, "object"
-			, "output"
-			, "picture"
-			, "progress"
-			, "q"
-			, "ruby"
-			, "s"
-			, "samp"
-			, "script"
-			, "select"
-			, "small"
-			, "span"
-			, "strong"
-			, "sub"
-			, "sup"
-			, "textarea"
-			, "time"
-			, "tt"
-			, "var"
-		], true);
+		return false !== array_search(
+			$node->tagName,
+			[
+				"a", "abbr", "acronym", "audio", "b", "bdi", "bdo", "big"
+				#, "br"
+				, "button", "canvas", "cite", "code", "data", "datalist", "del", "dfn", "em", "embed", "i", "iframe", "img", "input", "ins", "kbd", "label", "map", "mark", "meter", "noscript", "object", "output", "picture", "progress", "q", "ruby", "s", "samp", "script", "select", "small", "span", "strong", "sub", "sup", "textarea", "time", "tt", "var"
+			],
+			true
+		);
 	}
 }

@@ -1,22 +1,22 @@
 {
-    "name": "asmundstavdahl/html",
-    "description": "HTML made programatically",
-    "type": "library",
-    "version": "1.2.1",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Åsmund Stavdahl",
-            "email": "asmund.stavdahl@gmail.com"
-        }
-    ],
-    "minimum-stability": "stable",
-    "autoload": {
-        "psr-4": {
-            "HTML\\": "src/"
-        }
-    },
-    "require": {
-        "php": ">=7.0"
+  "name": "asmundstavdahl/html",
+  "description": "HTML made programatically",
+  "type": "library",
+  "version": "1.2.1",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Åsmund Stavdahl",
+      "email": "asmund.stavdahl@gmail.com"
     }
+  ],
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "HTML\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.0"
+  }
 }

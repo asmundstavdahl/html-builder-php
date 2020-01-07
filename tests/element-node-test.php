@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__."/../vendor/autoload.php";
+require_once __DIR__ . "/../vendor/autoload.php";
 
 $indent = "  ";
 
@@ -21,8 +21,10 @@ assert($html == "<div></div>");
 $el = new HTML\Element(
 	"a",
 	["href" => "http://example.com"],
-	[ new HTML\TextNode("example")
-    , new HTML\Element("b", [], ["link"]) ]);
+	[
+		new HTML\TextNode("example"), new HTML\Element("b", [], ["link"])
+	]
+);
 
 $html = $el->toHTML($uglyConfig);
 assert($html == "<a href=\"http://example.com\">example<b>link</b></a>");
