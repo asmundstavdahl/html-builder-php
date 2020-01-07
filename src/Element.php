@@ -18,6 +18,11 @@ class Element implements Node
 		$this->childNodes = $childNodes;
 	}
 
+	function __toString(): string
+	{
+		return $this->toHTML(new HtmlConfig());
+	}
+
 	public function toHTML(HtmlConfig $config): string
 	{
 		$attributeString = $this->attributeString($config);
