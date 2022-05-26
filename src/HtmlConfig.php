@@ -1,6 +1,6 @@
 <?php
 
-namespace HTML;
+namespace AsmundStavdahl\HTML;
 
 /**
  * Configuration for when making HTML.

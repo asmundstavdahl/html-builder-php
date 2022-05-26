@@ -1,6 +1,6 @@
 <?php
 
-namespace HTML;
+namespace AsmundStavdahl\HTML;
 
 /**
  * An HTML node; text or element.

@@ -1,6 +1,6 @@
 <?php
 
-namespace HTML;
+namespace AsmundStavdahl\HTML;
 
 require_once __DIR__ . "/Node.php";
 require_once __DIR__ . "/HtmlConfig.php";

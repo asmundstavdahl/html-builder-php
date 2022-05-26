@@ -1,12 +1,3 @@
-# html-builder-php
-
-# Usage
-
-```sh
-composer require asmundstavdahl/html
-```
-
-```php
 <?php
 
 require_once 'vendor/autoload.php';
@@ -41,32 +32,35 @@ $htmlConfig = new HTML\HtmlConfig(
 	"  "  # indent with two spaces
 );
 $html = $nodeTree->toHTML($htmlConfig);
-```
 
-The resulting `$html` would be this string:
+/**
+ * Insert updated example PHP code from the README file above this comment
+ */
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>
-      Test of html-builder
-    </title>
-    <style>
-      h1 { color: red; }
-      .im-blue { color: lightblue; }
-    </style>
-  </head>
-  <body>
-    <h1>
-      This is a test
-    </h1>
-    <p>
-      Strings become text nodes.
-      <br>
-      You can also be more explicit and make a text node using the TEXT function&period;
-    </p>
-    <label for="test_input">Test input</label><input id="test_input" type="text">
-  </body>
-</html>
-```
+/**
+ * Retrieve the output HTML from the README file
+ */
+$readme = file_get_contents(__DIR__ . "/../README.md");
+$wantedHtmlLines = [];
+$inHtmlBlock = false;
+foreach (explode("\n", $readme) as $lineNr => $line) {
+    if ($inHtmlBlock) {
+        if($line === "```") {
+            $inHtmlBlock = false;
+        }
+        else {
+            $wantedHtmlLines[] = $line;
+        }
+    }
+
+    if ($line === "```html") {
+        $inHtmlBlock = true;
+    }
+}
+$wantedHtml = implode("\n", $wantedHtmlLines);
+
+$ok = assert($html === $wantedHtml);
+
+if (!$ok) {
+	echo "html:\n{$html}\n:html\n";
+}

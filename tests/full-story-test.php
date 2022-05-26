@@ -1,8 +1,11 @@
 <?php
 
+namespace AsmundStavdahl\HTML;
+
 require_once __DIR__ . "/../vendor/autoload.php";
 
-new HTML\Elements;
+// Autoload functions
+new Elements;
 
 $nodeTree = HTML(
 	["lang" => "en"],
@@ -65,7 +68,7 @@ $nodeTree = HTML(
 	]
 );
 
-$htmlConfig = new HTML\HtmlConfig(true, "\t");
+$htmlConfig = new HtmlConfig(true, "\t");
 $html = $nodeTree->toHTML($htmlConfig);
 $expectedHtml = <<<EOF
 <!DOCTYPE html>

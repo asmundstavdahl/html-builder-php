@@ -1,23 +1,25 @@
 <?php
 
+namespace AsmundStavdahl\HTML;
+
 require_once __DIR__ . "/../vendor/autoload.php";
 
 $indent = "  ";
 
-$uglyConfig = new HTML\HtmlConfig(false);
-$prettyConfig = new HTML\HtmlConfig(true, $indent);
+$uglyConfig = new HtmlConfig(false);
+$prettyConfig = new HtmlConfig(true, $indent);
 
 #
 
-$el = new HTML\Element(
+$el = new Element(
 	"div",
 	[],
 	[
-		new HTML\TextNode("foo"), new HTML\Element(
+		new TextNode("foo"), new Element(
 			"span",
 			[],
 			[
-				new HTML\TextNode("bar"), new HTML\TextNode("baz")
+				new TextNode("bar"), new TextNode("baz")
 			]
 		)
 	]

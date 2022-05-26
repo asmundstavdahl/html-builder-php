@@ -9,6 +9,7 @@ test:
 	php tests/add-child-test.php
 	php tests/element-attributes-test.php
 	php tests/script-tag-test.php
+	php tests/readme-test.php
 
 setup-dev:
 	composer install

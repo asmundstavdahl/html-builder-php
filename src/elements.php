@@ -1,5 +1,7 @@
 <?php
 
+namespace AsmundStavdahl\HTML;
+
 /**
  * Functions for each HTML element.
  *
@@ -11,17 +13,17 @@ require_once __DIR__ . "/TextNode.php";
 require_once __DIR__ . "/Element.php";
 require_once __DIR__ . "/ElementWithoutEndTag.php";
 
-function HTML(array $attributes = [], array $childNodes = []): HTML\Node
+function HTML(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\HtmlRootElement($attributes, $childNodes);
+    return new HtmlRootElement($attributes, $childNodes);
 }
 
 /**
  * Just a plain text node; not an HTML element.
  */
-function TEXT(string $text): HTML\Node
+function TEXT(string $text): Node
 {
-    return new HTML\TextNode($text);
+    return new TextNode($text);
 }
 
 /**
@@ -30,504 +32,504 @@ function TEXT(string $text): HTML\Node
  * @see https://html.spec.whatwg.org/ search for "No end tag"
  */
 //
-function BASE_tag(array $attributes = []): HTML\Node
+function BASE_tag(array $attributes = []): Node
 {
-    return new HTML\ElementWithoutEndTag("base", $attributes);
+    return new ElementWithoutEndTag("base", $attributes);
 }
-function LINK_tag(array $attributes = []): HTML\Node
+function LINK_tag(array $attributes = []): Node
 {
-    return new HTML\ElementWithoutEndTag("link", $attributes);
+    return new ElementWithoutEndTag("link", $attributes);
 }
-function MASK(array $attributes = []): HTML\Node
+function MASK(array $attributes = []): Node
 {
-    return new HTML\ElementWithoutEndTag("mask", $attributes);
+    return new ElementWithoutEndTag("mask", $attributes);
 }
-function META(array $attributes = []): HTML\Node
+function META(array $attributes = []): Node
 {
-    return new HTML\ElementWithoutEndTag("meta", $attributes);
+    return new ElementWithoutEndTag("meta", $attributes);
 }
-function HR(array $attributes = []): HTML\Node
+function HR(array $attributes = []): Node
 {
-    return new HTML\ElementWithoutEndTag("hr", $attributes);
+    return new ElementWithoutEndTag("hr", $attributes);
 }
-function BR(array $attributes = []): HTML\Node
+function BR(array $attributes = []): Node
 {
-    return new HTML\ElementWithoutEndTag("br", $attributes);
+    return new ElementWithoutEndTag("br", $attributes);
 }
-function WBR(array $attributes = []): HTML\Node
+function WBR(array $attributes = []): Node
 {
-    return new HTML\ElementWithoutEndTag("wbr", $attributes);
+    return new ElementWithoutEndTag("wbr", $attributes);
 }
-function IMG(array $attributes = []): HTML\Node
+function IMG(array $attributes = []): Node
 {
-    return new HTML\ElementWithoutEndTag("img", $attributes);
+    return new ElementWithoutEndTag("img", $attributes);
 }
-function PARAM(array $attributes = []): HTML\Node
+function PARAM(array $attributes = []): Node
 {
-    return new HTML\ElementWithoutEndTag("param", $attributes);
+    return new ElementWithoutEndTag("param", $attributes);
 }
-function TRACK(array $attributes = []): HTML\Node
+function TRACK(array $attributes = []): Node
 {
-    return new HTML\ElementWithoutEndTag("track", $attributes);
+    return new ElementWithoutEndTag("track", $attributes);
 }
-function AREA_tag(array $attributes = []): HTML\Node
+function AREA_tag(array $attributes = []): Node
 {
-    return new HTML\ElementWithoutEndTag("area", $attributes);
+    return new ElementWithoutEndTag("area", $attributes);
 }
-function INPUT(array $attributes = []): HTML\Node
+function INPUT(array $attributes = []): Node
 {
-    return new HTML\ElementWithoutEndTag("input", $attributes);
+    return new ElementWithoutEndTag("input", $attributes);
 }
 
 /**
  * Normal elements follow.
  */
 //
-function A(array $attributes = [], array $childNodes = []): HTML\Node
+function A(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("a", $attributes, $childNodes);
+    return new Element("a", $attributes, $childNodes);
 }
-function ABBR(array $attributes = [], array $childNodes = []): HTML\Node
+function ABBR(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("abbr", $attributes, $childNodes);
+    return new Element("abbr", $attributes, $childNodes);
 }
-function ACRONYM(array $attributes = [], array $childNodes = []): HTML\Node
+function ACRONYM(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("acronym", $attributes, $childNodes);
+    return new Element("acronym", $attributes, $childNodes);
 }
-function ADDRESS(array $attributes = [], array $childNodes = []): HTML\Node
+function ADDRESS(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("address", $attributes, $childNodes);
+    return new Element("address", $attributes, $childNodes);
 }
-function APPLET(array $attributes = [], array $childNodes = []): HTML\Node
+function APPLET(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("applet", $attributes, $childNodes);
+    return new Element("applet", $attributes, $childNodes);
 }
-function AREA(array $attributes = [], array $childNodes = []): HTML\Node
+function AREA(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("area", $attributes, $childNodes);
+    return new Element("area", $attributes, $childNodes);
 }
-function ARTICLE(array $attributes = [], array $childNodes = []): HTML\Node
+function ARTICLE(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("article", $attributes, $childNodes);
+    return new Element("article", $attributes, $childNodes);
 }
-function ASIDE(array $attributes = [], array $childNodes = []): HTML\Node
+function ASIDE(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("aside", $attributes, $childNodes);
+    return new Element("aside", $attributes, $childNodes);
 }
-function AUDIO(array $attributes = [], array $childNodes = []): HTML\Node
+function AUDIO(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("audio", $attributes, $childNodes);
+    return new Element("audio", $attributes, $childNodes);
 }
-function B(array $attributes = [], array $childNodes = []): HTML\Node
+function B(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("b", $attributes, $childNodes);
+    return new Element("b", $attributes, $childNodes);
 }
-function BASE(array $attributes = [], array $childNodes = []): HTML\Node
+function BASE(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("base", $attributes, $childNodes);
+    return new Element("base", $attributes, $childNodes);
 }
-function BASEFONT(array $attributes = [], array $childNodes = []): HTML\Node
+function BASEFONT(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("basefont", $attributes, $childNodes);
+    return new Element("basefont", $attributes, $childNodes);
 }
-function BDI(array $attributes = [], array $childNodes = []): HTML\Node
+function BDI(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("bdi", $attributes, $childNodes);
+    return new Element("bdi", $attributes, $childNodes);
 }
-function BDO(array $attributes = [], array $childNodes = []): HTML\Node
+function BDO(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("bdo", $attributes, $childNodes);
+    return new Element("bdo", $attributes, $childNodes);
 }
-function BIG(array $attributes = [], array $childNodes = []): HTML\Node
+function BIG(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("big", $attributes, $childNodes);
+    return new Element("big", $attributes, $childNodes);
 }
-function BLOCKQUOTE(array $attributes = [], array $childNodes = []): HTML\Node
+function BLOCKQUOTE(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("blockquote", $attributes, $childNodes);
+    return new Element("blockquote", $attributes, $childNodes);
 }
-function BODY(array $attributes = [], array $childNodes = []): HTML\Node
+function BODY(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("body", $attributes, $childNodes);
+    return new Element("body", $attributes, $childNodes);
 }
-#function BR(array $attributes = [], array $childNodes = []) : HTML\Node { return new HTML\Element("br", $attributes, $childNodes); }
-function BUTTON(array $attributes = [], array $childNodes = []): HTML\Node
+#function BR(array $attributes = [], array $childNodes = []) : Node { return new Element("br", $attributes, $childNodes); }
+function BUTTON(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("button", $attributes, $childNodes);
+    return new Element("button", $attributes, $childNodes);
 }
-function CANVAS(array $attributes = [], array $childNodes = []): HTML\Node
+function CANVAS(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("canvas", $attributes, $childNodes);
+    return new Element("canvas", $attributes, $childNodes);
 }
-function CAPTION(array $attributes = [], array $childNodes = []): HTML\Node
+function CAPTION(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("caption", $attributes, $childNodes);
+    return new Element("caption", $attributes, $childNodes);
 }
-function CENTER(array $attributes = [], array $childNodes = []): HTML\Node
+function CENTER(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("center", $attributes, $childNodes);
+    return new Element("center", $attributes, $childNodes);
 }
-function CITE(array $attributes = [], array $childNodes = []): HTML\Node
+function CITE(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("cite", $attributes, $childNodes);
+    return new Element("cite", $attributes, $childNodes);
 }
-function CODE(array $attributes = [], array $childNodes = []): HTML\Node
+function CODE(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("code", $attributes, $childNodes);
+    return new Element("code", $attributes, $childNodes);
 }
-function COL(array $attributes = [], array $childNodes = []): HTML\Node
+function COL(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("col", $attributes, $childNodes);
+    return new Element("col", $attributes, $childNodes);
 }
-function COLGROUP(array $attributes = [], array $childNodes = []): HTML\Node
+function COLGROUP(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("colgroup", $attributes, $childNodes);
+    return new Element("colgroup", $attributes, $childNodes);
 }
-function DATA(array $attributes = [], array $childNodes = []): HTML\Node
+function DATA(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("data", $attributes, $childNodes);
+    return new Element("data", $attributes, $childNodes);
 }
-function DATALIST(array $attributes = [], array $childNodes = []): HTML\Node
+function DATALIST(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("datalist", $attributes, $childNodes);
+    return new Element("datalist", $attributes, $childNodes);
 }
-function DD(array $attributes = [], array $childNodes = []): HTML\Node
+function DD(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("dd", $attributes, $childNodes);
+    return new Element("dd", $attributes, $childNodes);
 }
-function DEL(array $attributes = [], array $childNodes = []): HTML\Node
+function DEL(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("del", $attributes, $childNodes);
+    return new Element("del", $attributes, $childNodes);
 }
-function DETAILS(array $attributes = [], array $childNodes = []): HTML\Node
+function DETAILS(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("details", $attributes, $childNodes);
+    return new Element("details", $attributes, $childNodes);
 }
-function DFN(array $attributes = [], array $childNodes = []): HTML\Node
+function DFN(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("dfn", $attributes, $childNodes);
+    return new Element("dfn", $attributes, $childNodes);
 }
-function DIALOG(array $attributes = [], array $childNodes = []): HTML\Node
+function DIALOG(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("dialog", $attributes, $childNodes);
+    return new Element("dialog", $attributes, $childNodes);
 }
-function DIR_tag(array $attributes = [], array $childNodes = []): HTML\Node
+function DIR_tag(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("dir", $attributes, $childNodes);
+    return new Element("dir", $attributes, $childNodes);
 }
-function DIV(array $attributes = [], array $childNodes = []): HTML\Node
+function DIV(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("div", $attributes, $childNodes);
+    return new Element("div", $attributes, $childNodes);
 }
-function DL_tag(array $attributes = [], array $childNodes = []): HTML\Node
+function DL_tag(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("dl", $attributes, $childNodes);
+    return new Element("dl", $attributes, $childNodes);
 }
-function DT(array $attributes = [], array $childNodes = []): HTML\Node
+function DT(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("dt", $attributes, $childNodes);
+    return new Element("dt", $attributes, $childNodes);
 }
-function EM(array $attributes = [], array $childNodes = []): HTML\Node
+function EM(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("em", $attributes, $childNodes);
+    return new Element("em", $attributes, $childNodes);
 }
-function EMBED(array $attributes = [], array $childNodes = []): HTML\Node
+function EMBED(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("embed", $attributes, $childNodes);
+    return new Element("embed", $attributes, $childNodes);
 }
-function FIELDSET(array $attributes = [], array $childNodes = []): HTML\Node
+function FIELDSET(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("fieldset", $attributes, $childNodes);
+    return new Element("fieldset", $attributes, $childNodes);
 }
-function FIGCAPTION(array $attributes = [], array $childNodes = []): HTML\Node
+function FIGCAPTION(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("figcaption", $attributes, $childNodes);
+    return new Element("figcaption", $attributes, $childNodes);
 }
-function FIGURE(array $attributes = [], array $childNodes = []): HTML\Node
+function FIGURE(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("figure", $attributes, $childNodes);
+    return new Element("figure", $attributes, $childNodes);
 }
-function FONT(array $attributes = [], array $childNodes = []): HTML\Node
+function FONT(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("font", $attributes, $childNodes);
+    return new Element("font", $attributes, $childNodes);
 }
-function FOOTER(array $attributes = [], array $childNodes = []): HTML\Node
+function FOOTER(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("footer", $attributes, $childNodes);
+    return new Element("footer", $attributes, $childNodes);
 }
-function FORM(array $attributes = [], array $childNodes = []): HTML\Node
+function FORM(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("form", $attributes, $childNodes);
+    return new Element("form", $attributes, $childNodes);
 }
-function FRAME(array $attributes = [], array $childNodes = []): HTML\Node
+function FRAME(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("frame", $attributes, $childNodes);
+    return new Element("frame", $attributes, $childNodes);
 }
-function FRAMESET(array $attributes = [], array $childNodes = []): HTML\Node
+function FRAMESET(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("frameset", $attributes, $childNodes);
+    return new Element("frameset", $attributes, $childNodes);
 }
-function H1(array $attributes = [], array $childNodes = []): HTML\Node
+function H1(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("h1", $attributes, $childNodes);
+    return new Element("h1", $attributes, $childNodes);
 }
-function H2(array $attributes = [], array $childNodes = []): HTML\Node
+function H2(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("h2", $attributes, $childNodes);
+    return new Element("h2", $attributes, $childNodes);
 }
-function H3(array $attributes = [], array $childNodes = []): HTML\Node
+function H3(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("h3", $attributes, $childNodes);
+    return new Element("h3", $attributes, $childNodes);
 }
-function H4(array $attributes = [], array $childNodes = []): HTML\Node
+function H4(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("h4", $attributes, $childNodes);
+    return new Element("h4", $attributes, $childNodes);
 }
-function H5(array $attributes = [], array $childNodes = []): HTML\Node
+function H5(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("h5", $attributes, $childNodes);
+    return new Element("h5", $attributes, $childNodes);
 }
-function H6(array $attributes = [], array $childNodes = []): HTML\Node
+function H6(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("h6", $attributes, $childNodes);
+    return new Element("h6", $attributes, $childNodes);
 }
-function HEAD(array $attributes = [], array $childNodes = []): HTML\Node
+function HEAD(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("head", $attributes, $childNodes);
+    return new Element("head", $attributes, $childNodes);
 }
-#function HEADER(array $attributes = [], array $childNodes = []) : HTML\Node { return new HTML\Element("header", $attributes, $childNodes); }
-#function HR(array $attributes = [], array $childNodes = []) : HTML\Node { return new HTML\Element("hr", $attributes, $childNodes); }
-function I(array $attributes = [], array $childNodes = []): HTML\Node
+#function HEADER(array $attributes = [], array $childNodes = []) : Node { return new Element("header", $attributes, $childNodes); }
+#function HR(array $attributes = [], array $childNodes = []) : Node { return new Element("hr", $attributes, $childNodes); }
+function I(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("i", $attributes, $childNodes);
+    return new Element("i", $attributes, $childNodes);
 }
-function IFRAME(array $attributes = [], array $childNodes = []): HTML\Node
+function IFRAME(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("iframe", $attributes, $childNodes);
+    return new Element("iframe", $attributes, $childNodes);
 }
-#function IMG(array $attributes = [], array $childNodes = []) : HTML\Node { return new HTML\Element("img", $attributes, $childNodes); }
-#function INPUT(array $attributes = [], array $childNodes = []) : HTML\Node { return new HTML\Element("input", $attributes, $childNodes); }
-function INS(array $attributes = [], array $childNodes = []): HTML\Node
+#function IMG(array $attributes = [], array $childNodes = []) : Node { return new Element("img", $attributes, $childNodes); }
+#function INPUT(array $attributes = [], array $childNodes = []) : Node { return new Element("input", $attributes, $childNodes); }
+function INS(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("ins", $attributes, $childNodes);
+    return new Element("ins", $attributes, $childNodes);
 }
-function KBD(array $attributes = [], array $childNodes = []): HTML\Node
+function KBD(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("kbd", $attributes, $childNodes);
+    return new Element("kbd", $attributes, $childNodes);
 }
-function LABEL(array $attributes = [], array $childNodes = []): HTML\Node
+function LABEL(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("label", $attributes, $childNodes);
+    return new Element("label", $attributes, $childNodes);
 }
-function LEGEND(array $attributes = [], array $childNodes = []): HTML\Node
+function LEGEND(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("legend", $attributes, $childNodes);
+    return new Element("legend", $attributes, $childNodes);
 }
-function LI(array $attributes = [], array $childNodes = []): HTML\Node
+function LI(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("li", $attributes, $childNodes);
+    return new Element("li", $attributes, $childNodes);
 }
-#function LINK(array $attributes = [], array $childNodes = []) : HTML\Node { return new HTML\Element("link", $attributes, $childNodes); }
-function MAIN(array $attributes = [], array $childNodes = []): HTML\Node
+#function LINK(array $attributes = [], array $childNodes = []) : Node { return new Element("link", $attributes, $childNodes); }
+function MAIN(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("main", $attributes, $childNodes);
+    return new Element("main", $attributes, $childNodes);
 }
-function MAP(array $attributes = [], array $childNodes = []): HTML\Node
+function MAP(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("map", $attributes, $childNodes);
+    return new Element("map", $attributes, $childNodes);
 }
-function MARK(array $attributes = [], array $childNodes = []): HTML\Node
+function MARK(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("mark", $attributes, $childNodes);
+    return new Element("mark", $attributes, $childNodes);
 }
-#function META(array $attributes = [], array $childNodes = []) : HTML\Node { return new HTML\Element("meta", $attributes, $childNodes); }
-function METER(array $attributes = [], array $childNodes = []): HTML\Node
+#function META(array $attributes = [], array $childNodes = []) : Node { return new Element("meta", $attributes, $childNodes); }
+function METER(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("meter", $attributes, $childNodes);
+    return new Element("meter", $attributes, $childNodes);
 }
-function NAV(array $attributes = [], array $childNodes = []): HTML\Node
+function NAV(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("nav", $attributes, $childNodes);
+    return new Element("nav", $attributes, $childNodes);
 }
-function NOFRAMES(array $attributes = [], array $childNodes = []): HTML\Node
+function NOFRAMES(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("noframes", $attributes, $childNodes);
+    return new Element("noframes", $attributes, $childNodes);
 }
-function NOSCRIPT(array $attributes = [], array $childNodes = []): HTML\Node
+function NOSCRIPT(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("noscript", $attributes, $childNodes);
+    return new Element("noscript", $attributes, $childNodes);
 }
-function OBJECT(array $attributes = [], array $childNodes = []): HTML\Node
+function OBJECT(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("object", $attributes, $childNodes);
+    return new Element("object", $attributes, $childNodes);
 }
-function OL(array $attributes = [], array $childNodes = []): HTML\Node
+function OL(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("ol", $attributes, $childNodes);
+    return new Element("ol", $attributes, $childNodes);
 }
-function OPTGROUP(array $attributes = [], array $childNodes = []): HTML\Node
+function OPTGROUP(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("optgroup", $attributes, $childNodes);
+    return new Element("optgroup", $attributes, $childNodes);
 }
-function OPTION(array $attributes = [], array $childNodes = []): HTML\Node
+function OPTION(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("option", $attributes, $childNodes);
+    return new Element("option", $attributes, $childNodes);
 }
-function OUTPUT(array $attributes = [], array $childNodes = []): HTML\Node
+function OUTPUT(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("output", $attributes, $childNodes);
+    return new Element("output", $attributes, $childNodes);
 }
-function P(array $attributes = [], array $childNodes = []): HTML\Node
+function P(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("p", $attributes, $childNodes);
+    return new Element("p", $attributes, $childNodes);
 }
-#function PARAM(array $attributes = [], array $childNodes = []) : HTML\Node { return new HTML\Element("param", $attributes, $childNodes); }
-function PICTURE(array $attributes = [], array $childNodes = []): HTML\Node
+#function PARAM(array $attributes = [], array $childNodes = []) : Node { return new Element("param", $attributes, $childNodes); }
+function PICTURE(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("picture", $attributes, $childNodes);
+    return new Element("picture", $attributes, $childNodes);
 }
-function PRE(array $attributes = [], array $childNodes = []): HTML\Node
+function PRE(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("pre", $attributes, $childNodes);
+    return new Element("pre", $attributes, $childNodes);
 }
-function PROGRESS(array $attributes = [], array $childNodes = []): HTML\Node
+function PROGRESS(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("progress", $attributes, $childNodes);
+    return new Element("progress", $attributes, $childNodes);
 }
-function Q(array $attributes = [], array $childNodes = []): HTML\Node
+function Q(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("q", $attributes, $childNodes);
+    return new Element("q", $attributes, $childNodes);
 }
-function RP(array $attributes = [], array $childNodes = []): HTML\Node
+function RP(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("rp", $attributes, $childNodes);
+    return new Element("rp", $attributes, $childNodes);
 }
-function RT(array $attributes = [], array $childNodes = []): HTML\Node
+function RT(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("rt", $attributes, $childNodes);
+    return new Element("rt", $attributes, $childNodes);
 }
-function RUBY(array $attributes = [], array $childNodes = []): HTML\Node
+function RUBY(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("ruby", $attributes, $childNodes);
+    return new Element("ruby", $attributes, $childNodes);
 }
-function S(array $attributes = [], array $childNodes = []): HTML\Node
+function S(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("s", $attributes, $childNodes);
+    return new Element("s", $attributes, $childNodes);
 }
-function SAMP(array $attributes = [], array $childNodes = []): HTML\Node
+function SAMP(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("samp", $attributes, $childNodes);
+    return new Element("samp", $attributes, $childNodes);
 }
-function SCRIPT(array $attributes = [], array $childNodes = []): HTML\Node
+function SCRIPT(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("script", $attributes, $childNodes);
+    return new Element("script", $attributes, $childNodes);
 }
-function SECTION(array $attributes = [], array $childNodes = []): HTML\Node
+function SECTION(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("section", $attributes, $childNodes);
+    return new Element("section", $attributes, $childNodes);
 }
-function SELECT(array $attributes = [], array $childNodes = []): HTML\Node
+function SELECT(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("select", $attributes, $childNodes);
+    return new Element("select", $attributes, $childNodes);
 }
-function SMALL(array $attributes = [], array $childNodes = []): HTML\Node
+function SMALL(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("small", $attributes, $childNodes);
+    return new Element("small", $attributes, $childNodes);
 }
-function SOURCE(array $attributes = [], array $childNodes = []): HTML\Node
+function SOURCE(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("source", $attributes, $childNodes);
+    return new Element("source", $attributes, $childNodes);
 }
-function SPAN(array $attributes = [], array $childNodes = []): HTML\Node
+function SPAN(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("span", $attributes, $childNodes);
+    return new Element("span", $attributes, $childNodes);
 }
-function STRIKE(array $attributes = [], array $childNodes = []): HTML\Node
+function STRIKE(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("strike", $attributes, $childNodes);
+    return new Element("strike", $attributes, $childNodes);
 }
-function STRONG(array $attributes = [], array $childNodes = []): HTML\Node
+function STRONG(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("strong", $attributes, $childNodes);
+    return new Element("strong", $attributes, $childNodes);
 }
-function STYLE(array $attributes = [], array $childNodes = []): HTML\Node
+function STYLE(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("style", $attributes, $childNodes);
+    return new Element("style", $attributes, $childNodes);
 }
-function SUB(array $attributes = [], array $childNodes = []): HTML\Node
+function SUB(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("sub", $attributes, $childNodes);
+    return new Element("sub", $attributes, $childNodes);
 }
-function SUMMARY(array $attributes = [], array $childNodes = []): HTML\Node
+function SUMMARY(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("summary", $attributes, $childNodes);
+    return new Element("summary", $attributes, $childNodes);
 }
-function SUP(array $attributes = [], array $childNodes = []): HTML\Node
+function SUP(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("sup", $attributes, $childNodes);
+    return new Element("sup", $attributes, $childNodes);
 }
-function SVG(array $attributes = [], array $childNodes = []): HTML\Node
+function SVG(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("svg", $attributes, $childNodes);
+    return new Element("svg", $attributes, $childNodes);
 }
-function TABLE(array $attributes = [], array $childNodes = []): HTML\Node
+function TABLE(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("table", $attributes, $childNodes);
+    return new Element("table", $attributes, $childNodes);
 }
-function TBODY(array $attributes = [], array $childNodes = []): HTML\Node
+function TBODY(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("tbody", $attributes, $childNodes);
+    return new Element("tbody", $attributes, $childNodes);
 }
-function TD(array $attributes = [], array $childNodes = []): HTML\Node
+function TD(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("td", $attributes, $childNodes);
+    return new Element("td", $attributes, $childNodes);
 }
-function TEMPLATE(array $attributes = [], array $childNodes = []): HTML\Node
+function TEMPLATE(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("template", $attributes, $childNodes);
+    return new Element("template", $attributes, $childNodes);
 }
-function TEXTAREA(array $attributes = [], array $childNodes = []): HTML\Node
+function TEXTAREA(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("textarea", $attributes, $childNodes);
+    return new Element("textarea", $attributes, $childNodes);
 }
-function TFOOT(array $attributes = [], array $childNodes = []): HTML\Node
+function TFOOT(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("tfoot", $attributes, $childNodes);
+    return new Element("tfoot", $attributes, $childNodes);
 }
-function TH(array $attributes = [], array $childNodes = []): HTML\Node
+function TH(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("th", $attributes, $childNodes);
+    return new Element("th", $attributes, $childNodes);
 }
-function THEAD(array $attributes = [], array $childNodes = []): HTML\Node
+function THEAD(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("thead", $attributes, $childNodes);
+    return new Element("thead", $attributes, $childNodes);
 }
-#function TIME(array $attributes = [], array $childNodes = []) : HTML\Node { return new HTML\Element("time", $attributes, $childNodes); }
-function TITLE(array $attributes = [], array $childNodes = []): HTML\Node
+#function TIME(array $attributes = [], array $childNodes = []) : Node { return new Element("time", $attributes, $childNodes); }
+function TITLE(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("title", $attributes, $childNodes);
+    return new Element("title", $attributes, $childNodes);
 }
-function TR(array $attributes = [], array $childNodes = []): HTML\Node
+function TR(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("tr", $attributes, $childNodes);
+    return new Element("tr", $attributes, $childNodes);
 }
-#function TRACK(array $attributes = [], array $childNodes = []) : HTML\Node { return new HTML\Element("track", $attributes, $childNodes); }
-function TT(array $attributes = [], array $childNodes = []): HTML\Node
+#function TRACK(array $attributes = [], array $childNodes = []) : Node { return new Element("track", $attributes, $childNodes); }
+function TT(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("tt", $attributes, $childNodes);
+    return new Element("tt", $attributes, $childNodes);
 }
-function U(array $attributes = [], array $childNodes = []): HTML\Node
+function U(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("u", $attributes, $childNodes);
+    return new Element("u", $attributes, $childNodes);
 }
-function UL(array $attributes = [], array $childNodes = []): HTML\Node
+function UL(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("ul", $attributes, $childNodes);
+    return new Element("ul", $attributes, $childNodes);
 }
-#function VAR(array $attributes = [], array $childNodes = []) : HTML\Node { return new HTML\Element("var", $attributes, $childNodes); }
-function VIDEO(array $attributes = [], array $childNodes = []): HTML\Node
+#function VAR(array $attributes = [], array $childNodes = []) : Node { return new Element("var", $attributes, $childNodes); }
+function VIDEO(array $attributes = [], array $childNodes = []): Node
 {
-    return new HTML\Element("video", $attributes, $childNodes);
+    return new Element("video", $attributes, $childNodes);
 }
-#function WBR(array $attributes = [], array $childNodes = []) : HTML\Node { return new HTML\Element("wbr", $attributes, $childNodes); }
+#function WBR(array $attributes = [], array $childNodes = []) : Node { return new Element("wbr", $attributes, $childNodes); }

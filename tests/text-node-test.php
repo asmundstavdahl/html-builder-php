@@ -1,11 +1,13 @@
 <?php
 
+namespace AsmundStavdahl\HTML;
+
 require_once __DIR__ . "/../vendor/autoload.php";
 
-$uglyConfig = new HTML\HtmlConfig(false);
-$prettyConfig = new HTML\HtmlConfig(true, "  ");
+$uglyConfig = new HtmlConfig(false);
+$prettyConfig = new HtmlConfig(true, "  ");
 
-$textNode = new HTML\TextNode("Escape <html> & entities please.");
+$textNode = new TextNode("Escape <html> & entities please.");
 
 $html = $textNode->toHTML($uglyConfig);
 assert($html == "Escape &lt;html&gt; &amp; entities please&period;");

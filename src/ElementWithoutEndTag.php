@@ -1,6 +1,6 @@
 <?php
 
-namespace HTML;
+namespace AsmundStavdahl\HTML;
 
 class ElementWithoutEndTag extends Element
 {

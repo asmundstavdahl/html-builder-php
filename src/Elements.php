@@ -6,7 +6,7 @@
  * Try `new HTML\Elements;`.
  */
 
-namespace HTML;
+namespace AsmundStavdahl\HTML;
 
 require_once __DIR__ . "/elements.php";
 

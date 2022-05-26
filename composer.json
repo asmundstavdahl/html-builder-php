@@ -2,7 +2,7 @@
   "name": "asmundstavdahl/html",
   "description": "HTML made programatically",
   "type": "library",
-  "version": "1.3.0",
+  "version": "3.0.0",
   "license": "MIT",
   "authors": [
     {
@@ -13,7 +13,7 @@
   "minimum-stability": "stable",
   "autoload": {
     "psr-4": {
-      "HTML\\": "src/"
+      "AsmundStavdahl\\HTML\\": "src/"
     }
   },
   "require": {

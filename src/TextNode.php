@@ -1,6 +1,6 @@
 <?php
 
-namespace HTML;
+namespace AsmundStavdahl\HTML;
 
 class TextNode implements Node
 {
